@@ -17,7 +17,7 @@ Build the docker container and run it with:
 ```
 cd slackbridge/docker
 docker build -t slackbridge .
-docker run -d -t slackbridge
+docker run --restart=always -d -t slackbridge
 ```
 
 Enjoy :)
