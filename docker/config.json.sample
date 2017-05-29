@@ -5,8 +5,8 @@
     "token": "CHANGEME",
     "channelMapping": {
       "hallitus": "#hallitus.helsinki.hacklab.fi",
-      "avainjäsenet": "#urpokerho.helsinki.hacklab.fi",
-      "#bifrost": "#helsinki.hacklab.fi"
+      "#hacklab_fi": "#hacklab.fi",
+      "#helsinki_hacklab_fi": "#helsinki.hacklab.fi"
     }
   }
 ]
