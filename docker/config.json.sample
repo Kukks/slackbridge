@@ -3,6 +3,7 @@
     "nickname": "hhlslackbot",
     "server": "irc.freenode.org",
     "token": "CHANGEME",
+    "muteBridgedUsers": false,
     "channelMapping": {
       "hallitus": "#hallitus.helsinki.hacklab.fi",
       "#hacklab_fi": "#hacklab.fi",

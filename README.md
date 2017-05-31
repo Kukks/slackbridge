@@ -16,8 +16,10 @@ Build the docker container and run it with:
 
 ```
 cd slackbridge/docker
-docker build -t slackbridge .
-docker run --restart=always -d -t slackbridge
+docker build -t slack-irc-bridge .
+docker run --name slack-irc-bridge --restart=always -d -t slack-irc-bridge
 ```
+
+For testing use `docker build -t slack-irc-bridge . ; docker run --rm --name slack-irc-bridge -t slack-irc-bridge`
 
 Enjoy :)
