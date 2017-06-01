@@ -1,4 +1,4 @@
-FROM ubuntu:wily
+FROM ubuntu:xenial
 
 ENV DEBIAN_FRONTEND noninteractive
 
@@ -6,17 +6,20 @@ ENV DEBIAN_FRONTEND noninteractive
 RUN apt-get update && apt-get upgrade -y && apt-get dist-upgrade -y
 
 # Install requirements
-RUN apt-get install -y curl supervisor
+RUN apt-get install -y curl supervisor git make gcc g++ apt-utils libicu-dev
 
 # Install nodejs
-RUN curl -sL https://deb.nodesource.com/setup_5.x | bash -
+RUN curl -sL https://deb.nodesource.com/setup_6.x | bash -
 RUN apt-get install --fix-missing -y nodejs
 
 # Get slack-irc
-RUN npm install -g slack-irc
+RUN git clone https://github.com/markus456/slack-irc.git && \
+    cd slack-irc && \
+    npm install && \
+    npm run build
 
 # Add configurations
-ADD config.json slack-irc/config.json
+ADD config.json /slack-irc/config.json
 
 # Add supervisor configs
 ADD supervisord.conf supervisord.conf
