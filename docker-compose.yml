@@ -1,0 +1,11 @@
+version: '3'
+
+services:
+    slackbridge:
+        container_name: slackbridge
+        build: 
+            context: ./docker
+            dockerfile: Dockerfile
+        restart: always
+        volumes:
+            - ./config.json:/slack-irc/config.json

@@ -18,8 +18,6 @@ RUN git clone https://github.com/kukks/slack-irc.git && \
     npm install && \
     npm run build
 
-# Add configurations
-ADD config.json /slack-irc/config.json
 
 # Add supervisor configs
 ADD supervisord.conf supervisord.conf
