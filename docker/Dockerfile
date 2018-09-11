@@ -1,16 +1,9 @@
-FROM ubuntu:xenial
+FROM node
 
 ENV DEBIAN_FRONTEND noninteractive
 
-# Usual update / upgrade
-RUN apt-get update && apt-get upgrade -y && apt-get dist-upgrade -y
-
-# Install requirements
-RUN apt-get install -y curl supervisor git make gcc g++ apt-utils libicu-dev
-
-# Install nodejs
-RUN curl -sL https://deb.nodesource.com/setup_6.x | bash -
-RUN apt-get install --fix-missing -y nodejs
+# Usual update and install
+RUN apt-get update && apt-get install -y supervisor
 
 # Get slack-irc
 RUN git clone https://github.com/ekmartin/slack-irc.git && \
