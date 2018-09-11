@@ -13,7 +13,7 @@ RUN curl -sL https://deb.nodesource.com/setup_6.x | bash -
 RUN apt-get install --fix-missing -y nodejs
 
 # Get slack-irc
-RUN git clone https://github.com/kukks/slack-irc.git && \
+RUN git clone https://github.com/ekmartin/slack-irc.git && \
     cd slack-irc && \
     npm install && \
     npm run build
